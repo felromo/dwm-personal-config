@@ -69,11 +69,11 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char  *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", colors[0][ColBG], "-nf", colors[0][ColFG], "-sb", colors[1][ColBG], "-sf", colors[1][ColFG], NULL };
-static const char   *termcmd[] = { "urxvtc", NULL };
+static const char   *termcmd[] = { "st", NULL };
 //static const char  *xtermcmd[] = { "xterm",  NULL };
-static const char   *mailcmd[] = { "urxvtc", "-title", "mutt", "-e", "mutt", NULL };
-static const char   *tmuxcmd[] = { "urxvtc", "-title", "tmux", "-e", "tmux", "new-session", "-s", "core", NULL };
-static const char    *padcmd[] = { "urxvtc", "-title", "scratchpad", "-geometry", "56x10-30+40", NULL };
+static const char   *mailcmd[] = { "st", "-title", "mutt", "-e", "mutt", NULL };
+static const char   *tmuxcmd[] = { "st", "-title", "tmux", "-e", "tmux", "new-session", "-s", "core", NULL };
+static const char    *padcmd[] = { "st", "-title", "scratchpad", "-geometry", "56x10-30+40", NULL };
 //static const char   *lockcmd[] = { "xautolock", "-locknow", NULL };
 static const char *rebootcmd[] = { "systemctl", "reboot", NULL };
 static const char   *shutcmd[] = { "systemctl", "poweroff", NULL };
@@ -120,15 +120,15 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Right,  cycle,          {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_Left,   tagcycle,       {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_Right,  tagcycle,       {.i = +1 } },
-	TAGKEYS(                        XK_1,                      0)
-	TAGKEYS(                        XK_2,                      1)
-	TAGKEYS(                        XK_3,                      2)
-	TAGKEYS(                        XK_4,                      3)
-	TAGKEYS(                        XK_5,                      4)
-	TAGKEYS(                        XK_6,                      5)
-	TAGKEYS(                        XK_7,                      6)
-	TAGKEYS(                        XK_8,                      7)
-	TAGKEYS(                        XK_9,                      8)
+	TAGKEYS(                        XK_ampersand,                       0)
+	TAGKEYS(                        XK_bracketleft,                     1)
+	TAGKEYS(                        XK_braceleft,                       2)
+	TAGKEYS(                        XK_braceright,                      3)
+	TAGKEYS(                        XK_parenleft,                       4)
+	TAGKEYS(                        XK_equal,                           5)
+	TAGKEYS(                        XK_asterisk,                        6)
+  TAGKEYS(                        XK_parenright,                      7)
+	TAGKEYS(                        XK_plus,                            8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
 
